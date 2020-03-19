@@ -1,5 +1,6 @@
 # 20-03-19 React Conditional Rendering CW
-
+### Well done! Putting your jsx files in a component folder will make it easier for other devs (and potentially yourself) to find your component files. Good use of select (it does look nicer). You've got a useless constructor in the List of Items component, you can toss that one.
+### Score : 5/5
 #### Set Up
 - Create a react app called buy-sell-app
 - Create a class based component called `AppContainer` that displays an h1 tag with the text `Buy Sell App`
