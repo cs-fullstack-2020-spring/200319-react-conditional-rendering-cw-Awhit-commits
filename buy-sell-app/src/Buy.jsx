@@ -10,6 +10,7 @@ export default class Buy extends Component {
       buyList: []
     };
   }
+  //Grab the values from input if there are such values in the field
   handleChange = event => {
     if (event.target.name === "name") {
       this.setState({ name: event.target.value });
@@ -17,17 +18,20 @@ export default class Buy extends Component {
       this.setState({ price: event.target.value });
     }
   };
+
+    //For clicking the submit button, it'll clear out the values while pusing them into a list
   handleSubmission = event => {
     event.preventDefault();
     this.state.buyList.push({buyName:this.state.name,
     buyPrice:this.state.price})
     this.setState({buyList:this.state.buyList})
     this.props.updateBuy(this.state.buyList)
+    this.setState({name: "",price:""})
   };
 
 
   render() {
-    // fields product title, product offer price
+    //Setting up a simple form with event listners included
     return (
       <div>
         <form action="">

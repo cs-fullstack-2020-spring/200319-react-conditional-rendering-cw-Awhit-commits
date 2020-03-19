@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class Sell extends Component {
   constructor(props) {
     super(props);
-
+    //initialize variables in state
     this.state = {
       name: "",
       price: "",
@@ -11,6 +11,7 @@ export default class Sell extends Component {
       sellList: []
     };
   }
+  //when typed, values are captured and stored in updated state
   handleChange = event => {
     if (event.target.name === "name") {
       this.setState({ name: event.target.value });
@@ -20,7 +21,7 @@ export default class Sell extends Component {
       this.setState({ condition: event.target.value });
     }
   }
-  
+  //For clicking the submit button, it'll clear out the values while pusing them into a list
   handleSubmission=(event) =>{
       event.preventDefault();
       this.state.sellList.push({sellName:this.state.name,sellPrice:this.state.price,sellCondition:this.state.condition})
@@ -29,7 +30,7 @@ export default class Sell extends Component {
       this.props.updateSell(this.state.sellList)
   }
   render() {
-    // fields product title, product price, and product condition
+    // Setting up the form with event listeners
     return (
       <div>
         <form action="">
@@ -59,6 +60,7 @@ export default class Sell extends Component {
                 />
               </p>
               <p>
+                {/* Personal touch of select looks nicer in my opinion */}
                 <select
                   name="condition"
                   id="condition"
